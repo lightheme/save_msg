@@ -1,6 +1,4 @@
 *.session
 .venv
+.idea
 saver.config.json
-dist/*.session
-dist/saver.config.json
-main.spec
