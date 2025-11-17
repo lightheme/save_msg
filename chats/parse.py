@@ -24,11 +24,10 @@ async def find_chat(chat, client):
             limit=10
         ))
 
-        try:
+        if result.results:
             result = result.results[0]
-        except IndexError:
-            print(result)
-            result = None
+        elif result.my_results:
+            result = result.my_results[0]
         return result
     else:
         return await client.get_input_entity(global_chats[chat])
