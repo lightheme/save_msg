@@ -24,15 +24,12 @@ async def find_chat(chat, client):
             limit=10
         ))
 
-        # if result.my_results[0]:
-        #     if isinstance(result.my_results[0], PeerChannel):
-        #         set_chat(chat, result.my_results[0].channel_id)
-        #     elif isinstance(result.my_results[0], PeerUser):
-        #         set_chat(chat, result.my_results[0].user_id)
-        #     else:
-        #         set_chat(chat, result.my_results[0].chat_id)
-
-        return result.my_results[0]
+        try:
+            result = result.results[0]
+        except IndexError:
+            print(result)
+            result = None
+        return result
     else:
         return await client.get_input_entity(global_chats[chat])
 
@@ -55,6 +52,8 @@ async def parse_saved_chats(client):
         else:
             chats = list(filter(lambda x: int(x)<len(workdirs) or int(x)>0, input_chats.strip().split()))
             choose_chats = [[await find_chat(workdirs[int(inp) - 1], client), workdirs[int(inp) - 1]] for inp in chats]
+        
+        choose_chats.remove(None)
         for chat in choose_chats:
             await save_msgs(chat, client)
 
