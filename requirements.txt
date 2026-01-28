@@ -1,3 +1,5 @@
 telethon
 art
 tqdm
+qrcode
+pyinstaller

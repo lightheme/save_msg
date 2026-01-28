@@ -2,3 +2,6 @@
 .venv
 .idea
 saver.config.json
+build
+dist
+.gitignore

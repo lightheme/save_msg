@@ -22,4 +22,4 @@ def header():
           '\___ \   / _ \   \ \ / / |  _|  | |_) |\n'
           ' ___) | / ___ \   \ V /  | |___ |  _ <\n'
           '|____/ /_/   \_\   \_/   |_____||_| \_\\')
-    print('    ' * 4 + Fore.RED + 'By Voynov 2025 1.2' + Style.RESET_ALL + '\n\n')
+    print('    ' * 4 + Fore.RED + 'By Voynov 2025 1.3' + Style.RESET_ALL + '\n\n')

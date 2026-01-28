@@ -1,8 +1,9 @@
+import asyncio
+
 print('[INFO] Приложение запускается...')
 from tgClient.login import login
 from tgClient.client import start_client, disconnecting
 from chats import globally
-from chats.globally import global_chats
 from chats.parse import parse_new_chats, parse_saved_chats
 from utils.beautiful_print import header
 from colorama import init
